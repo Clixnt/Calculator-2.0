@@ -176,20 +176,20 @@ main {
 /* For button .maximize and .minimize (js togle) */
 .maximizeCalc {
   main {
-    max-width: 90%;
-    height: 60%;
+    max-width: 500px ;
+    height: 60% ;
   }
   .button-container {
-    height: 85% !important;
+    height: 85% ;
   }
 }
 .minimizeCalc {
   main {
-    height: 405px !important;
+    height: 405px ;
     max-width: 390px;
   }
   .button-container {
-    height: 320px !important;
+    height: 320px ;
   }
 }
 
