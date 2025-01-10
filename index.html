@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Clint Lorenzo">
+    <title>Calculator 2.0</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon/icons8-calculator-47.png">
+</head>
+
+<body>
+    <main>
+        <div id="closeMain" class="container">
+            <div class="MacOS-Button">
+                <div id="Macbutton1" class="close icon"></div>
+                <div id="Macbutton2" class="minimize icon"></div>
+                <div id="Macbutton3" class="maximize icon"></div>
+            </div>
+
+            <div class="output-number">
+                <input id="display" name="NumberOutputDisplay" readonly>
+            </div>
+
+            <div class="button-container">
+                <button onclick="Clear()" class="gray">CE</button>
+                <button onclick="del()" class="gray">C</button>
+                <button onclick="DisplayKeys('%')" class="gray">%</button>
+                <button onclick="DisplayKeys('/')" class="orange">÷</button>
+
+                <button onclick="DisplayKeys('7')" class="lightgray">7</button>
+                <button onclick="DisplayKeys('8')" class="lightgray">8</button>
+                <button onclick="DisplayKeys('9')" class="lightgray">9</button>
+                <button onclick="DisplayKeys('*')" class="orange">✕</button>
+
+                <button onclick="DisplayKeys('4')" class="lightgray">4</button>
+                <button onclick="DisplayKeys('5')" class="lightgray">5</button>
+                <button onclick="DisplayKeys('6')" class="lightgray">6</button>
+                <button onclick="DisplayKeys('-')" class="orange">−</button>
+
+                <button onclick="DisplayKeys('1')" class="lightgray">1</button>
+                <button onclick="DisplayKeys('2')" class="lightgray">2</button>
+                <button onclick="DisplayKeys('3')" class="lightgray">3</button>
+                <button onclick="DisplayKeys('+')" class="orange">+</button>
+
+                <button onclick="DisplayKeys('0')" class="lightgray zero">0</button>
+                <button onclick="DisplayKeys('.')" class="lightgray">.</button>
+                <button onclick="Calculate()" class="orange equal">=</button>
+            </div>
+        </div>
+
+        <div class="behind-button">
+            <button type="button" id="behind">Click to show the calculator :]</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
