@@ -1,6 +1,6 @@
+// Calculator, Code By Clint Lorenzo
 // Click Close to close
 const Macbutton1 = document.getElementById("Macbutton1");
-const behind = document.getElementById("behind");
 const Main = document.getElementById("closeMain");
 
 Macbutton1.onclick = function () {
@@ -50,3 +50,4 @@ function Calculate() {
     display.value = " Error";
   }
 }
+
