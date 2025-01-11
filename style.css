@@ -12,10 +12,6 @@ body {
   padding: 0;
   /* outline: 2px solid blueviolet; */
 }
-*:focus {
-  /* for input */
-  outline: 0 !important;
-}
 :root {
   /* background color for button */
   --Bg-Button-Gray: rgb(85, 85, 86);
@@ -41,11 +37,13 @@ main {
   height: 493px;
   display: grid;
 }
+
 .behind-button,
 .container {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
 }
+
 .behind-button {
   display: grid;
   place-items: center;
@@ -68,6 +66,7 @@ main {
     );
   }
 }
+
 .container {
   background-color: var(--dark-Grayblack-background);
   box-shadow: var(--CssScan-BoxShadow);
@@ -135,6 +134,10 @@ main {
     text-align: end;
     width: 100%;
     padding-right: 0.5rem;
+
+    &:focus {
+      outline: 0 !important;
+    }
   }
 }
 
@@ -151,25 +154,7 @@ main {
     border-radius: 0 0 10px;
   }
 
-  /* Colors */
-  & button {
-    font-weight: bold;
-    border: 1px solid var(--border-lightgray);
-    font-size: 1.2rem;
-    color: white;
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s;
-    border-radius: 5px;
-    cursor: pointer;
-
-    &:hover:not(.orange) {
-      transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.25s;
-      background-color: var(--hover-lightGray);
-    }
-    &:hover:not(.gray, .lightgray) {
-      transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.25s;
-      background-color: var(--hover-lightorange);
-    }
-  }
+  /* Button Colors */
   & .gray {
     background-color: var(--Bg-Button-Gray);
   }
@@ -179,25 +164,65 @@ main {
   & .lightgray {
     background-color: var(--Bg-Button-LightGray);
   }
+
+  & button {
+    font-weight: bold;
+    border: 1px solid var(--border-lightgray);
+    font-size: 1.2rem;
+    color: white;
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.25s;
+    border-radius: 3.5px;
+
+    @media (width >= 768px) {
+      cursor: pointer;
+    }
+
+    &:focus:not(.orange),
+    &:hover:not(.orange),
+    &:focus:not(.gray, .lightgray),
+    &:hover:not(.gray, .lightgray) {
+      transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.25s;
+    }
+    &:focus:not(.orange),
+    &:focus:not(.gray, .lightgray) {
+      outline: none;
+      border: none;
+    }
+    &:focus:not(.orange) {
+      background-color: var(--hover-lightGray);
+    }
+    &:focus:not(.gray, .lightgray) {
+      background-color: var(--hover-lightorange);
+    }
+    &:hover:not(.orange) {
+      background-color: var(--hover-lightGray);
+    }
+    &:hover:not(.gray, .lightgray) {
+      background-color: var(--hover-lightorange);
+    }
+    &:active {
+      opacity: 0.5;
+    }
+  }
 }
 
 /* For button .maximize and .minimize (js toggle) */
 .maximizeCalc {
   main {
-    max-width: 500px;
-    height: 60%;
+    max-width: 500px !important;
+    height: 60% !important;
   }
   .button-container {
-    height: 85%;
+    height: 85% !important;
   }
 }
 .minimizeCalc {
   main {
-    height: 405px;
-    max-width: 390px;
+    height: 405px !important;
+    max-width: 390px !important;
   }
   .button-container {
-    height: 320px;
+    height: 320px !important;
   }
 }
 
@@ -205,7 +230,7 @@ main {
 @media (width <= 320px) {
   main,
   .container {
-    height: 420px;
+    height: 420px !important;
   }
   .button-container {
     height: 328px !important;
