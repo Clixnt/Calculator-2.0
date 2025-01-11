@@ -33,15 +33,15 @@ const display = document.getElementById("display");
 
 function DisplayKeys(input) {
   display.value += input;
-}
+};
 
 function del() {
   display.value = display.value.slice(0, -1);
-}
+};
 
 function Clear() {
   display.value = "";
-}
+};
 
 function Calculate() {
   try {
@@ -49,5 +49,5 @@ function Calculate() {
   } catch (error) {
     display.value = " Error";
   }
-}
+};
 
