@@ -1,15 +1,20 @@
-/* Code By Clint Lorenzo */
+/* Calculator, Code By Clint Lorenzo */
 body {
   display: grid;
   place-items: center;
   height: 100vh;
   height: 100svh;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: system-ui;
   background-color: var(--dark-Grayblack-background);
 }
 * {
   margin: 0;
   padding: 0;
+  /* outline: 2px solid blueviolet; */
+}
+*:focus {
+  /* for input */
+  outline: 0 !important;
 }
 :root {
   /* background color for button */
@@ -17,7 +22,7 @@ body {
   --Bg-Button-LightGray: rgb(113, 113, 114);
   --Bg-Button-DarkOrange: rgb(242, 164, 59);
 
-  /* Hover Background color for button */
+  /* Hover Bg for button */
   --hover-lightGray: rgb(128, 128, 128);
   --hover-lightorange: rgb(255, 182, 92);
 
@@ -120,6 +125,7 @@ main {
   align-items: end;
   padding-bottom: 3px;
   height: 55px;
+  width: 100%;
 
   & input {
     color: white;
@@ -127,6 +133,8 @@ main {
     border: none;
     font-size: 2rem;
     text-align: end;
+    width: 100%;
+    padding-right: 0.5rem;
   }
 }
 
@@ -173,23 +181,23 @@ main {
   }
 }
 
-/* For button .maximize and .minimize (js togle) */
+/* For button .maximize and .minimize (js toggle) */
 .maximizeCalc {
   main {
-    max-width: 500px ;
-    height: 60% ;
+    max-width: 500px;
+    height: 60%;
   }
   .button-container {
-    height: 85% ;
+    height: 85%;
   }
 }
 .minimizeCalc {
   main {
-    height: 405px ;
+    height: 405px;
     max-width: 390px;
   }
   .button-container {
-    height: 320px ;
+    height: 320px;
   }
 }
 
