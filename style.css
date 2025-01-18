@@ -1,5 +1,7 @@
+
 /* Calculator, Code By Clint Lorenzo */
 body {
+  display: -ms-grid;
   display: grid;
   place-items: center;
   height: 100vh;
@@ -30,13 +32,19 @@ main {
   width: 95%;
   max-width: 400px;
   height: 493px;
+  display: -ms-grid;
   display: grid;
 }
 .behind-button, .container {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
   grid-column: 1 / 2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
   grid-row: 1 / 2;
 }
 .behind-button {
+  display: -ms-grid;
   display: grid;
   place-items: center;
   cursor: pointer;
@@ -48,17 +56,22 @@ main {
   height: 60px;
   border-radius: 10px;
   cursor: pointer;
-  box-shadow: var(--CssScan-BoxShadow);
+  -webkit-box-shadow: var(--CssScan-BoxShadow);
+          box-shadow: var(--CssScan-BoxShadow);
   color: white;
+  background: -o-linear-gradient(131deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
   background: linear-gradient(319deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
 }
 .container {
   background-color: var(--dark-Grayblack-background);
-  box-shadow: var(--CssScan-BoxShadow);
+  -webkit-box-shadow: var(--CssScan-BoxShadow);
+          box-shadow: var(--CssScan-BoxShadow);
   border-radius: 10px;
   z-index: 1;
 }
 .MacOS-Button {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   gap: 5px;
   padding: 10px;
@@ -69,9 +82,13 @@ main {
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .MacOS-Button .icon:hover {
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .MacOS-Button .close {
@@ -93,10 +110,18 @@ main {
   background-image: url(button/3-maximize-2-hover.svg);
 }
 .output-number {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  align-items: end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
   padding-bottom: 3px;
   height: 55px;
   width: 100%;
@@ -114,17 +139,19 @@ main {
   outline: 0 !important;
 }
 .button-container {
+  display: -ms-grid;
   display: grid;
   height: 401px;
   grid-template-columns: repeat(4, 1fr);
 }
 .button-container .zero {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-column: 1 / 3;
   border-radius: 0 0 0 10px;
 }
 .button-container .equal {
   border-radius: 0 0 10px;
-  /* Button Colors */
 }
 .button-container .gray {
   background-color: var(--Bg-Button-Gray);
@@ -140,6 +167,8 @@ main {
   border: 1px solid var(--border-lightgray);
   font-size: 1.2rem;
   color: white;
+  -webkit-transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.25s;
+  -o-transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.25s;
   transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.25s;
   border-radius: 3.5px;
 }
@@ -149,6 +178,8 @@ main {
   }
 }
 .button-container button:focus:not(.orange), .button-container button:hover:not(.orange), .button-container button:focus:not(.gray, .lightgray), .button-container button:hover:not(.gray, .lightgray) {
+  -webkit-transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.25s;
+  -o-transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.25s;
   transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.25s;
 }
 .button-container button:focus:not(.orange), .button-container button:focus:not(.gray, .lightgray) {
