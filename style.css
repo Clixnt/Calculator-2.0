@@ -14,22 +14,17 @@ body {
 }
 :root {
   /* background color for button */
-  --Bg-Button-Gray: rgb(85, 85, 86);
-  --Bg-Button-LightGray: rgb(113, 113, 114);
-  --Bg-Button-DarkOrange: rgb(242, 164, 59);
-
+  --Bg-Button-Gray: #555556;
+  --Bg-Button-LightGray: #717172;
+  --Bg-Button-DarkOrange: #f2a43b;
   /* Hover Bg for button */
-  --hover-lightGray: rgb(128, 128, 128);
-  --hover-lightorange: rgb(255, 182, 92);
-
+  --hover-lightGray: grey;
+  --hover-lightorange: #ffb65c;
   /* ~ */
-  --dark-Grayblack-background: rgb(67, 67, 68);
-  --border-lightgray: rgb(67, 67, 68);
-  --CssScan-BoxShadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  --dark-Grayblack-background: #434344;
+  --border-lightgray: #434344;
+  --CssScan-BoxShadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
-
 /* Real Code Starts Here 🗣️ */
 main {
   width: 95%;
@@ -37,86 +32,66 @@ main {
   height: 493px;
   display: grid;
 }
-
-.behind-button,
-.container {
+.behind-button, .container {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
 }
-
 .behind-button {
   display: grid;
   place-items: center;
   cursor: pointer;
   width: 100%;
   height: 100%;
-
-  & button {
-    width: 150px;
-    height: 60px;
-    border-radius: 10px;
-    cursor: pointer;
-    box-shadow: var(--CssScan-BoxShadow);
-    color: white;
-    background: linear-gradient(
-      319deg,
-      rgba(131, 58, 180, 1) 0%,
-      rgba(253, 29, 29, 1) 50%,
-      rgba(252, 176, 69, 1) 100%
-    );
-  }
 }
-
+.behind-button button {
+  width: 150px;
+  height: 60px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: var(--CssScan-BoxShadow);
+  color: white;
+  background: linear-gradient(319deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+}
 .container {
   background-color: var(--dark-Grayblack-background);
   box-shadow: var(--CssScan-BoxShadow);
   border-radius: 10px;
   z-index: 1;
 }
-
 .MacOS-Button {
   display: inline-flex;
   gap: 5px;
   padding: 10px;
-
-  & .icon {
-    width: 13px;
-    height: 13px;
-    background-repeat: no-repeat;
-    background-position: center;
-    cursor: pointer;
-    transition: all 0.3s;
-
-    &:hover {
-      transition: all 0.3s;
-    }
-  }
-
-  & .close {
-    background-image: url(button/1-close-1-normal.svg);
-
-    &:hover {
-      background-image: url(button/2-close-2-hover.svg);
-    }
-  }
-
-  & .minimize {
-    background-image: url(button/2-minimize-1-normal.svg);
-
-    &:hover {
-      background-image: url(button/2-minimize-2-hover.svg);
-    }
-  }
-
-  & .maximize {
-    background-image: url(button/3-maximize-1-normal.svg);
-
-    &:hover {
-      background-image: url(button/3-maximize-2-hover.svg);
-    }
-  }
 }
-
+.MacOS-Button .icon {
+  width: 13px;
+  height: 13px;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.MacOS-Button .icon:hover {
+  transition: all 0.3s;
+}
+.MacOS-Button .close {
+  background-image: url(button/1-close-1-normal.svg);
+}
+.MacOS-Button .close:hover {
+  background-image: url(button/2-close-2-hover.svg);
+}
+.MacOS-Button .minimize {
+  background-image: url(button/2-minimize-1-normal.svg);
+}
+.MacOS-Button .minimize:hover {
+  background-image: url(button/2-minimize-2-hover.svg);
+}
+.MacOS-Button .maximize {
+  background-image: url(button/3-maximize-1-normal.svg);
+}
+.MacOS-Button .maximize:hover {
+  background-image: url(button/3-maximize-2-hover.svg);
+}
 .output-number {
   display: flex;
   justify-content: center;
@@ -125,111 +100,94 @@ main {
   padding-bottom: 3px;
   height: 55px;
   width: 100%;
-
-  & input {
-    color: white;
-    background-color: transparent;
-    border: none;
-    font-size: 2rem;
-    text-align: end;
-    width: 100%;
-    padding-right: 0.5rem;
-
-    &:focus {
-      outline: 0 !important;
-    }
-  }
 }
-
+.output-number input {
+  color: white;
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  text-align: end;
+  width: 100%;
+  padding-right: 0.5rem;
+}
+.output-number input:focus {
+  outline: 0 !important;
+}
 .button-container {
   display: grid;
   height: 401px;
   grid-template-columns: repeat(4, 1fr);
-
-  & .zero {
-    grid-column: 1 / 3;
-    border-radius: 0 0 0 10px;
-  }
-  & .equal {
-    border-radius: 0 0 10px;
-  }
-
+}
+.button-container .zero {
+  grid-column: 1 / 3;
+  border-radius: 0 0 0 10px;
+}
+.button-container .equal {
+  border-radius: 0 0 10px;
   /* Button Colors */
-  & .gray {
-    background-color: var(--Bg-Button-Gray);
-  }
-  & .orange {
-    background-color: var(--Bg-Button-DarkOrange);
-  }
-  & .lightgray {
-    background-color: var(--Bg-Button-LightGray);
-  }
-
-  & button {
-    font-weight: bold;
-    border: 1px solid var(--border-lightgray);
-    font-size: 1.2rem;
-    color: white;
-    transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.25s;
-    border-radius: 3.5px;
-
-    @media (width >= 768px) {
-      cursor: pointer;
-    }
-
-    &:focus:not(.orange),
-    &:hover:not(.orange),
-    &:focus:not(.gray, .lightgray),
-    &:hover:not(.gray, .lightgray) {
-      transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.25s;
-    }
-    &:focus:not(.orange),
-    &:focus:not(.gray, .lightgray) {
-      outline: none;
-      border: none;
-    }
-    &:focus:not(.orange) {
-      background-color: var(--hover-lightGray);
-    }
-    &:focus:not(.gray, .lightgray) {
-      background-color: var(--hover-lightorange);
-    }
-    &:hover:not(.orange) {
-      background-color: var(--hover-lightGray);
-    }
-    &:hover:not(.gray, .lightgray) {
-      background-color: var(--hover-lightorange);
-    }
-    &:active {
-      opacity: 0.5;
-    }
+}
+.button-container .gray {
+  background-color: var(--Bg-Button-Gray);
+}
+.button-container .orange {
+  background-color: var(--Bg-Button-DarkOrange);
+}
+.button-container .lightgray {
+  background-color: var(--Bg-Button-LightGray);
+}
+.button-container button {
+  font-weight: bold;
+  border: 1px solid var(--border-lightgray);
+  font-size: 1.2rem;
+  color: white;
+  transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.25s;
+  border-radius: 3.5px;
+}
+@media (width >= 768px) {
+  .button-container button {
+    cursor: pointer;
   }
 }
-
+.button-container button:focus:not(.orange), .button-container button:hover:not(.orange), .button-container button:focus:not(.gray, .lightgray), .button-container button:hover:not(.gray, .lightgray) {
+  transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.25s;
+}
+.button-container button:focus:not(.orange), .button-container button:focus:not(.gray, .lightgray) {
+  outline: none;
+  border: none;
+}
+.button-container button:focus:not(.orange) {
+  background-color: var(--hover-lightGray);
+}
+.button-container button:focus:not(.gray, .lightgray) {
+  background-color: var(--hover-lightorange);
+}
+.button-container button:hover:not(.orange) {
+  background-color: var(--hover-lightGray);
+}
+.button-container button:hover:not(.gray, .lightgray) {
+  background-color: var(--hover-lightorange);
+}
+.button-container button:active {
+  opacity: 0.5;
+}
 /* For button .maximize and .minimize (js toggle) */
-.maximizeCalc {
-  main {
-    max-width: 500px !important;
-    height: 60% !important;
-  }
-  .button-container {
-    height: 85% !important;
-  }
+.maximizeCalc main {
+  max-width: 500px !important;
+  height: 60% !important;
 }
-.minimizeCalc {
-  main {
-    height: 405px !important;
-    max-width: 390px !important;
-  }
-  .button-container {
-    height: 320px !important;
-  }
+.maximizeCalc .button-container {
+  height: 85% !important;
 }
-
+.minimizeCalc main {
+  height: 405px !important;
+  max-width: 390px !important;
+}
+.minimizeCalc .button-container {
+  height: 320px !important;
+}
 /* For phones with a width of 320px */
 @media (width <= 320px) {
-  main,
-  .container {
+  main, .container {
     height: 420px !important;
   }
   .button-container {
